@@ -16,6 +16,7 @@ public class HomeController implements Serializable{
 	
 	public Usuario getUsuarioLogado() {
 		Map session = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+		//Testando
 		return (Usuario) session.get("usuarioLogado");
 	}
 	
