@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="template.xhtml">
+
+	<ui:define name="content">
+
+
+		<div class="input-group rounded">
+			<input type="search" class="form-control rounded"
+				placeholder="Search" aria-label="Search"
+				aria-describedby="search-addon" /> <span
+				class="input-group-text border-0" id="search-addon"> <i
+				class="fas fa-search"></i>
+			</span>
+		</div>
+		<br />
+		<div class="d-flex flex-row-reverse">
+			<i class="bi bi-box-arrow-in-left"></i>
+			<button type="button" class="btn btn-outline-success p-2">Nova
+				Ocorrência</button>
+		</div>
+
+	</ui:define>
+</ui:composition>
+</html>

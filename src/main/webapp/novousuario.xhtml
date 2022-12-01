@@ -1,0 +1,54 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="template.xhtml">
+	<ui:define name="content">
+
+<title>Geris - Cadastro de Usuário</title>
+<div class="d-flex flex-row-reverse">
+			<i class="bi bi-box-arrow-in-left"></i>
+			 <p:commandButton type="button" value="Voltar" styleClass="ui-button-raised ui-button-secondary" />
+		</div>
+<br/>
+
+<p:card style="width: 100%; margin-bottom: 2em">
+    <f:facet name="title">
+        Cadastro de novo usuário
+    </f:facet>
+    
+    <span class="ui-float-label">
+       <h:panelGrid columns="4" cellpadding="7" styleClass="mb-3">
+            <h:outputLabel for="nome" value="Nome:" style="font-weight:bold"/>
+            <p:inputText id="nome" value="#{usuarioController.usuario.nome}"/>
+            
+            <h:outputLabel for="email" value="Email:" style="font-weight:bold"/>
+            <p:inputText type="email" id="email" value="#{usuarioController.usuario.email}"/>
+            
+            <h:outputLabel for="senha" value="Senha:" style="font-weight:bold"/>
+            <p:password id="password" value="#{usuarioController.usuario.senha}" toggleMask="true" redisplay="true"/>
+            
+            <h:outputLabel for="departamento" value="Departamento: " style="font-weight:bold"/>
+            <p:inputText id="nome" value="#{usuarioController.usuario.nome}"/>
+            
+            <h:outputLabel for="departamento" value="Perfil " style="font-weight:bold"/>
+            <p:selectOneMenu value="#{usuarioController.usuario.perfil}">
+					<f:selectItem itemLabel="Selecione um Perfil ..." />
+					<f:selectItems 
+						value="#{usuarioController.listaPerfil}" 
+						var="obj"
+						itemLabel="#{obj.label}"/>
+			</p:selectOneMenu>
+       </h:panelGrid>
+       <h:panelGrid columns="2" cellpadding="7" styleClass="mb-3">
+       		<p:commandButton type="button" value="Salvar" styleClass="rounded-button ui-button-success" />
+       		<p:commandButton type="button" value="Cancelar" styleClass="rounded-button ui-button-danger" />
+       </h:panelGrid>
+   </span>
+</p:card>
+
+</ui:define>
+</ui:composition>
+</html>

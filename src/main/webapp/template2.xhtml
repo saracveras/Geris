@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:jsf="http://xmlns.jcp.org/jsf">
+<h:head>
+	<title>Geris</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+	<h:outputStylesheet library="webjars"
+		name="primeflex/3.2.0/primeflex.min.css" />
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</h:head>
+
+<h:body>
+	
+	<h:form>
+		<nav class="navbar navbar-inverse" style="height: 60px;">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target="#myNavbar">
+						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<h1 style="color: white;">Geris</h1>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="home.xhtml">Sistema Gerenciador de Riscos</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><h:outputLabel
+								style="color: #9d9d9d; padding: 15px; display: block;"
+								rendered="#{templateController.usuarioLogado != null}">
+								<span class="glyphicon glyphicon-user" />
+      			Olá #{templateController.usuarioLogado.nome}
+      		</h:outputLabel></li>
+						<li><h:commandLink
+								rendered="#{templateController.usuarioLogado != null}"
+								action="#{templateController.encerrarSessao}">
+								<span class="glyphicon glyphicon-log-out" />
+        		Sair
+        	</h:commandLink></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</h:form>
+</h:body>
+</html>
